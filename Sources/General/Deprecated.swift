@@ -225,31 +225,31 @@ extension KingfisherWrapper where Base: UIButton {
 #if os(watchOS)
 import WatchKit
 // MARK: - Deprecated
-extension KingfisherWrapper where Base: WKInterfaceImage {
-    @available(*, deprecated, message: "Use `Result` based callback instead.")
-    @discardableResult
-    public func setImage(_ resource: Resource?,
-                         placeholder: Image? = nil,
-                         options: KingfisherOptionsInfo? = nil,
-                         progressBlock: DownloadProgressBlock? = nil,
-                         completionHandler: CompletionHandler?) -> DownloadTask?
-    {
-        return setImage(
-            with: resource,
-            placeholder: placeholder,
-            options: options,
-            progressBlock: progressBlock)
-        {
-            result in
-            switch result {
-            case .success(let value):
-                completionHandler?(value.image, nil, value.cacheType, value.source.url)
-            case .failure(let error):
-                completionHandler?(nil, error as NSError, .none, nil)
-            }
-        }
-    }
-}
+//extension KingfisherWrapper where Base: WKInterfaceImage {
+//    @available(*, deprecated, message: "Use `Result` based callback instead.")
+//    @discardableResult
+//    public func setImage(_ resource: Resource?,
+//                         placeholder: Image? = nil,
+//                         options: KingfisherOptionsInfo? = nil,
+//                         progressBlock: DownloadProgressBlock? = nil,
+//                         completionHandler: CompletionHandler?) -> DownloadTask?
+//    {
+//        return setImage(
+//            resource,
+//            placeholder: placeholder,
+//            options: options,
+//            progressBlock: progressBlock)
+//        {
+//            result in
+//            switch result {
+//            case .success(let value):
+//                completionHandler?(value.image, nil, value.cacheType, value.source.url)
+//            case .failure(let error):
+//                completionHandler?(nil, error as NSError, .none, nil)
+//            }
+//        }
+//    }
+//}
 #endif
 
 #if os(macOS)
