@@ -51,11 +51,13 @@ extension Image: Placeholder {
     public func remove(from imageView: ImageView) { imageView.image = nil }
 }
 
+
 /// Default implementation of an arbitrary view as placeholder. The view will be 
 /// added as a subview when adding and be removed from its super view when removing.
 ///
 /// To use your customize View type as placeholder, simply let it conforming to 
 /// `Placeholder` by `extension MyView: Placeholder {}`.
+@available(iOS 9.0, *)
 extension Placeholder where Self: View {
     
     /// How the placeholder should be added to a given image view.

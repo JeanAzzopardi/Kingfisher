@@ -29,6 +29,7 @@ import Foundation
 /// Represents a set of conception related to storage which stores a certain type of value in memory.
 /// This is a namespace for the memory storage types. A `Backend` with a certain `Config` will be used to describe the
 /// storage. See these composed types for more information.
+@available(iOS 10.0, *)
 public enum MemoryStorage {
 
     /// Represents a storage which stores a certain type of value in memory. It provides fast access,
